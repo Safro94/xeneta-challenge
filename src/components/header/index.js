@@ -15,7 +15,10 @@ const Header = ({ handleSidebar, isOpen }) => {
 					className={styles.barsIcon}
 					style={{ transform: `translateX(${isOpen ? '50vw' : '0'})` }}
 				>
-					<FaBars onClick={() => handleSidebar(!isOpen)} />
+					<FaBars
+						data-testid='bars-icon'
+						onClick={() => handleSidebar(!isOpen)}
+					/>
 				</Link>
 			</div>
 			<div className={styles.user}>
