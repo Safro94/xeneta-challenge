@@ -1,4 +1,5 @@
 import Autocomplete from 'components/form/autocomplete';
+import Datepicker from 'components/form/datepicker';
 
 import styles from './index.module.scss';
 
@@ -18,9 +19,13 @@ Form.Autocomplete = ({ ...rest }) => {
 	);
 };
 
-// Form.Datepicker = ({ ...rest }) => {
-// 	return <Datepicker {...rest} />;
-// };
+Form.Datepicker = ({ ...rest }) => {
+	return (
+		<div className={styles.formGroup}>
+			<Datepicker {...rest} />
+		</div>
+	);
+};
 
 Form.Submit = ({ children, ...rest }) => {
 	return (

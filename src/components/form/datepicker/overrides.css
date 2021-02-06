@@ -1,0 +1,11 @@
+.nice-dates {
+	position: relative;
+}
+
+.nice-dates-day:before {
+	background: #1d63ff !important;
+}
+
+.nice-dates-day::after {
+	border-color: #1d63ff !important;
+}

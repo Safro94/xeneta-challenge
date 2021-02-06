@@ -3,7 +3,22 @@
 .form {
 	@include box-shadow;
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	gap: 10px;
 	background: $secondary-color;
 	border-radius: 4px;
+}
+
+@include mq-md {
+	.form {
+		max-width: 80%;
+		margin: auto;
+	}
+}
+
+@include mq-lg {
+	.form {
+		grid-template-columns: repeat(4, 1fr);
+		max-width: 100%;
+		gap: 0;
+	}
 }

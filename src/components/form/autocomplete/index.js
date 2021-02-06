@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Autosuggest from 'react-autosuggest';
 
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
+
+import PropTypes from 'prop-types';
 
 import { removeAccents } from 'utils/removeAccents';
 
@@ -15,6 +17,7 @@ const Autocomplete = ({
 	characters,
 	id,
 	onBlurSelected,
+	placeholder,
 }) => {
 	const [suggestions, setSuggestions] = useState(source || []);
 	const [highlightedSuggestion, setHighlightedSuggestion] = useState({
@@ -141,6 +144,7 @@ const Autocomplete = ({
 				onChange: handleChange,
 				onClick: handleClick,
 				onBlur: handleBlur,
+				placeholder,
 				...inputOptions,
 				'data-testid': 'input-text',
 			}}
@@ -151,6 +155,16 @@ const Autocomplete = ({
 
 Autocomplete.defaultProps = {
 	characters: 2,
+};
+
+Autocomplete.prototypes = {
+	onSelectItem: PropTypes.func,
+	inputOptions: PropTypes.shape({}),
+	source: PropTypes.arrayOf(),
+	characters: PropTypes.number,
+	id: PropTypes.string,
+	onBlurSelected: PropTypes.func,
+	placeholder: PropTypes.string,
 };
 
 export default Autocomplete;

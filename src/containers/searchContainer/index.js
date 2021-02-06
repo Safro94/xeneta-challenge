@@ -58,6 +58,7 @@ const SearchContainer = () => {
 					onBlurSelected
 					id='destination'
 				/>
+				<Form.Datepicker onSelectItem={handleItemSelected} />
 				<Form.Submit disabled={formInvalid}>Search</Form.Submit>
 			</Form>
 		</section>

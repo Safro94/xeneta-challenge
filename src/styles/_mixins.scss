@@ -21,7 +21,6 @@
 
 @mixin display($type: flex, $align: null, $justify: null, $direction: null) {
 	display: $type;
-	flex-wrap: wrap;
 	align-items: $align;
 	justify-content: $justify;
 	flex-direction: $direction;
