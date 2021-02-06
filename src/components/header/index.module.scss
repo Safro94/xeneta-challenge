@@ -10,9 +10,9 @@
 		@include display($align: center);
 
 		.barsIcon {
+			@include transition;
 			color: $secondary-color;
 			font-size: 22px;
-			transition: all 0.3s ease-in;
 		}
 	}
 

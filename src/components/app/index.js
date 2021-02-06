@@ -18,13 +18,15 @@ const App = () => {
 		<div className={styles.app}>
 			<Sidebar isOpen={showSidebar} />
 
-			<main>
+			<div>
 				<Header isOpen={showSidebar} handleSidebar={setShowSidebar} />
-				<Switch>
-					<Route exact path={HOME} component={Home} />
-					<Route component={NotFound} />
-				</Switch>
-			</main>
+				<main className={styles.main}>
+					<Switch>
+						<Route exact path={HOME} component={Home} />
+						<Route component={NotFound} />
+					</Switch>
+				</main>
+			</div>
 		</div>
 	);
 };

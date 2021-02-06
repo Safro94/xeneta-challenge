@@ -5,5 +5,9 @@
 		height: 100vh;
 		display: grid;
 		grid-template-columns: 200px 1fr;
+
+		.main {
+			padding: 20px;
+		}
 	}
 }

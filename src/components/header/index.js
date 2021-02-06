@@ -8,7 +8,7 @@ import styles from './index.module.scss';
 
 const Header = ({ handleSidebar, isOpen }) => {
 	return (
-		<div className={styles.header}>
+		<header className={styles.header}>
 			<div className={styles.iconContainer}>
 				<Link
 					to={HOME}
@@ -27,7 +27,7 @@ const Header = ({ handleSidebar, isOpen }) => {
 				</div>
 				<span className={styles.text}>Welcome user</span>
 			</div>
-		</div>
+		</header>
 	);
 };
 
