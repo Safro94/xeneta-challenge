@@ -1,0 +1,21 @@
+@import '../../styles/main.scss';
+
+@include mq-sm {
+	.container {
+		position: relative;
+
+		.sidebar {
+			position: absolute;
+			top: 0;
+			height: 100vh;
+			width: 100%;
+			left: 0;
+			overflow-y: auto;
+
+			.logo {
+				@include flex-center;
+				padding: 10px 0;
+			}
+		}
+	}
+}

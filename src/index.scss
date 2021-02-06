@@ -5,21 +5,29 @@
 	outline: none;
 }
 
-html  {
-	font-family: 'Poppins', sans-serif;
-}
-
 body {
+	color: black;
+	font-family: 'Poppins', sans-serif;
 	width: 100%;
 	min-height: 100vh;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+}
+
+button {
+	cursor: pointer;
+}
+
 ul {
 	list-style: none;
 }
 
-i {
+svg {
 	margin-right: 5px;
 }

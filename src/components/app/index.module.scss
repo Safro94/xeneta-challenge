@@ -1,0 +1,9 @@
+@import '../../styles/main.scss';
+
+@include mq-md {
+	.app {
+		height: 100vh;
+		display: grid;
+		grid-template-columns: 200px 1fr;
+	}
+}

@@ -27,6 +27,12 @@
 	flex-direction: $direction;
 }
 
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 @mixin scrollbar($display: none) {
 	&::-webkit-scrollbar {
 		width: 5px;
