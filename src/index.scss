@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+}
+
+html  {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+	list-style: none;
+}
+
+i {
+	margin-right: 5px;
+}
