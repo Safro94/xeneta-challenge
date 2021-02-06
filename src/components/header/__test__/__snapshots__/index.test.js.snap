@@ -9,8 +9,8 @@ exports[`Header should match the snapshot 1`] = `
   >
     <a
       class="barsIcon"
+      href="/"
       style="transform: translateX(0);"
-      to="/"
     >
       <svg
         data-testid="bars-icon"
