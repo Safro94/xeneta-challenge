@@ -1,19 +1,13 @@
-import { AiOutlineClose } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 
 import NavData from 'components/nav/navData';
 
 import styles from './index.module.scss';
 
-const Nav = ({ onClose }) => {
+const Nav = () => {
 	return (
 		<nav>
-			<ul className={styles.items} onClick={() => onClose(false)}>
-				{/* <li className={styles.toggle}>
-					<Link to='#' className={styles.closeIcon}>
-						<AiOutlineClose />
-					</Link>
-				</li> */}
+			<ul className={styles.items}>
 				{NavData.map(item => (
 					<li>
 						<NavLink

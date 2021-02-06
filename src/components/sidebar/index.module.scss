@@ -1,21 +1,36 @@
 @import '../../styles/main.scss';
 
-@include mq-sm {
+.container {
+	.sidebar {
+		background: $secondary-color;
+		position: fixed;
+		top: 0;
+		left: -100%;
+		transition: 850ms;
+		width: 50%;
+		height: 100vh;
+		overflow-y: auto;
+
+		.logo {
+			@include flex-center;
+			padding: 10px 0;
+		}
+	}
+
+	.active {
+		left: 0;
+		transition: 350ms;
+	}
+}
+
+@include mq-md {
 	.container {
 		position: relative;
 
 		.sidebar {
 			position: absolute;
-			top: 0;
-			height: 100vh;
 			width: 100%;
 			left: 0;
-			overflow-y: auto;
-
-			.logo {
-				@include flex-center;
-				padding: 10px 0;
-			}
 		}
 	}
 }

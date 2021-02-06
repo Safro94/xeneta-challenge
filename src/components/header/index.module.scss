@@ -1,0 +1,45 @@
+@import '../../styles/main.scss';
+
+.header {
+	@include display($justify: space-between);
+	padding: 0 10px;
+	background: $primary-color;
+	height: 55px;
+
+	.iconContainer {
+		@include display($align: center);
+
+		.barsIcon {
+			color: $secondary-color;
+			font-size: 22px;
+			transition: all 0.3s ease-in;
+		}
+	}
+
+	.user {
+		@include display($align: center);
+		color: $secondary-color;
+
+		.userIcon {
+			display: flex;
+
+			svg {
+				font-size: 18px;
+			}
+		}
+
+		.text {
+			font-weight: bold;
+		}
+	}
+}
+
+@include mq-md {
+	.header {
+		@include display($justify: flex-end);
+
+		.barsIcon {
+			display: none;
+		}
+	}
+}
