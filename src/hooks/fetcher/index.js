@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useErrorHandler } from 'react-error-boundary';
 
-import axios from 'utils/axios';
+import fetcher from 'utils/fetcher';
 
 const useFetch = ({ method = 'get', url, data = null }) => {
 	const [response, setResponse] = useState(null);
@@ -10,9 +10,13 @@ const useFetch = ({ method = 'get', url, data = null }) => {
 
 	useEffect(() => {
 		const fetchData = () => {
-			axios[method](url, JSON.parse(data))
+			fetcher({
+				method,
+				url,
+				data: JSON.parse(data),
+			})
 				.then(res => {
-					setResponse(res.data);
+					setResponse(res);
 				}, handleError)
 				.finally(() => {
 					setIsLoading(false);
