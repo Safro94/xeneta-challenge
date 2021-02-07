@@ -23,7 +23,7 @@ const Datepicker = ({
 
 	const formatDate = date => {
 		if (!date) return null;
-		format(date, DATE_FORMAT);
+		return format(date, DATE_FORMAT);
 	};
 
 	const handleDateChange = (date, id, stateUpdater) => {

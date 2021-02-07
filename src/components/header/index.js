@@ -1,8 +1,5 @@
 import { FaUserCircle, FaBars } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-import { HOME } from 'constants/routes';
 
 import styles from './index.module.scss';
 
@@ -10,8 +7,7 @@ const Header = ({ handleSidebar, isOpen }) => {
 	return (
 		<header className={styles.header}>
 			<div className={styles.iconContainer}>
-				<Link
-					to={HOME}
+				<div
 					className={styles.barsIcon}
 					style={{ transform: `translateX(${isOpen ? '50vw' : '0'})` }}
 				>
@@ -19,7 +15,7 @@ const Header = ({ handleSidebar, isOpen }) => {
 						data-testid='bars-icon'
 						onClick={() => handleSidebar(!isOpen)}
 					/>
-				</Link>
+				</div>
 			</div>
 			<div className={styles.user}>
 				<div className={styles.userIcon}>

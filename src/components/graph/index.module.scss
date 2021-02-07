@@ -1,5 +1,11 @@
 @import '../../styles/main.scss';
 
+canvas {
+	width: auto !important;
+	height: auto !important;
+	max-width: 100%;
+}
+
 @include mq-lg {
 	.container {
 		width: 100%;

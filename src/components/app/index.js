@@ -27,9 +27,11 @@ const App = () => {
 				<main className={styles.main}>
 					<ErrorBoundary FallbackComponent={Error}>
 						<Switch>
-							<BenchmarksProvider>
-								<Route exact path={HOME} component={Home} />
-							</BenchmarksProvider>
+							<Route exact path={HOME}>
+								<BenchmarksProvider>
+									<Home />
+								</BenchmarksProvider>
+							</Route>
 
 							<Route component={NotFound} />
 						</Switch>
