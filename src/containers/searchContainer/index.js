@@ -17,13 +17,13 @@ import styles from './index.module.scss';
 const SearchContainer = () => {
 	const { response: ports } = useFetch({ url: PORTS_ENDPOINT });
 	const { setGraphData, setPeriod } = useBenchmarks();
-
-	const [formInvalid, setFormInvalid] = useState(true);
 	const handleError = useErrorHandler();
 
+	const [formInvalid, setFormInvalid] = useState(true);
+
 	const [trip, setTrip] = useState({
-		// departure: null,
-		// destination: null,
+		departure: null,
+		destination: null,
 		departureDate: '',
 		returnDate: '',
 	});
@@ -42,18 +42,18 @@ const SearchContainer = () => {
 
 	const onSubmit = e => {
 		e.preventDefault();
+
 		fetcher({
 			url: `${RATES_ENDPOINT}/${trip.departure?.code}/${trip.destination?.code}`,
-		}).then(
-			res => {
-				setGraphData(res);
-				setPeriod({
-					departureDate: trip.departureDate,
-					returnDate: trip.returnDate,
-				});
-			},
-			error => handleError(error)
-		);
+		}).then(res => {
+			const dates = {
+				departureDate: trip.departureDate,
+				returnDate: trip.returnDate,
+			};
+
+			setGraphData(res, dates);
+			setPeriod(dates);
+		}, handleError);
 	};
 
 	return (

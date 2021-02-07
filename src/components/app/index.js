@@ -9,6 +9,8 @@ import Error from 'components/error';
 import Home from 'pages/home';
 import NotFound from 'pages/notFound';
 
+import { BenchmarksProvider } from 'hooks/benchmarks';
+
 import { HOME } from 'constants/routes';
 
 import styles from './index.module.scss';
@@ -25,7 +27,10 @@ const App = () => {
 				<main className={styles.main}>
 					<ErrorBoundary FallbackComponent={Error}>
 						<Switch>
-							<Route exact path={HOME} component={Home} />
+							<BenchmarksProvider>
+								<Route exact path={HOME} component={Home} />
+							</BenchmarksProvider>
+
 							<Route component={NotFound} />
 						</Switch>
 					</ErrorBoundary>

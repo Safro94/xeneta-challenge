@@ -1,17 +1,17 @@
 import SearchContainer from 'containers/searchContainer';
 import GraphContainer from 'containers/graphContainer';
 
-import { BenchmarksProvider } from 'hooks/benchmarks';
+import { useBenchmarks } from 'hooks/benchmarks';
 
 import styles from './index.module.scss';
 
 const Home = () => {
+	const { data } = useBenchmarks();
+
 	return (
 		<div className={styles.container}>
-			<BenchmarksProvider>
-				<SearchContainer />
-				<GraphContainer />
-			</BenchmarksProvider>
+			<SearchContainer />
+			{data.renderGraph && <GraphContainer />}
 		</div>
 	);
 };

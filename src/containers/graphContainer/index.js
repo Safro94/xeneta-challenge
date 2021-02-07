@@ -1,17 +1,12 @@
-import { useState } from 'react';
-
-import isWithinInterval from 'date-fns/isWithinInterval';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect } from 'react';
 
 import Card from 'components/card';
 import Graph from 'components/graph';
 
-import { useBenchmarks } from 'hooks/benchmarks';
+import { marketPositions } from 'constants/marketPositions';
 
-const types = {
-	low: 'Low',
-	average: 'Average',
-	high: 'High',
-};
+import { useBenchmarks } from 'hooks/benchmarks';
 
 const options = {
 	scales: {
@@ -51,65 +46,48 @@ const GraphContainer = () => {
 		period: { departureDate, returnDate },
 	} = useBenchmarks();
 
-	const validateDatePeriod = day => {
-		return isWithinInterval(new Date(day), {
-			start: new Date(departureDate),
-			end: new Date(returnDate),
-		});
-	};
+	const [filteredGraphData, setfilteredGraphData] = useState({});
 
-	const [hasElements] = useState(() =>
-		data?.some(item => validateDatePeriod(item.day))
-	);
+	useEffect(() => {
+		const graphData = {
+			labels: data.labels,
+			datasets: [
+				{
+					label: marketPositions.low,
+					data: data.types[marketPositions.low],
+					fill: false,
+					backgroundColor: 'rgb(255, 99, 132)',
+					borderColor: 'rgba(255, 99, 132, 0.2)',
+					yAxisID: 'y-axis-1',
+				},
+				{
+					label: marketPositions.average,
+					data: data.types[marketPositions.average],
+					fill: false,
+					backgroundColor: 'rgb(54, 162, 235)',
+					borderColor: 'rgba(54, 162, 235, 0.2)',
+					yAxisID: 'y-axis-1',
+				},
+				{
+					label: marketPositions.high,
+					data: data.types[marketPositions.high],
+					fill: false,
+					backgroundColor: 'rgb(0, 255, 128)',
+					borderColor: 'rgba(0, 255, 128, 0.2)',
+					yAxisID: 'y-axis-1',
+				},
+			],
+		};
 
-	const getData = type =>
-		data.filter(item => {
-			if (validateDatePeriod(item.day)) {
-				return {
-					x: item.day,
-					y: item[type],
-				};
-			}
-
-			return false;
-		});
-
-	const graphData = {
-		labels: data.map(item => item.day),
-		datasets: [
-			{
-				label: types.low,
-				data: getData(types.low),
-				fill: false,
-				backgroundColor: 'rgb(255, 99, 132)',
-				borderColor: 'rgba(255, 99, 132, 0.2)',
-				yAxisID: 'y-axis-1',
-			},
-			{
-				label: types.average,
-				data: getData(types.average),
-				fill: false,
-				backgroundColor: 'rgb(54, 162, 235)',
-				borderColor: 'rgba(54, 162, 235, 0.2)',
-				yAxisID: 'y-axis-1',
-			},
-			{
-				label: types.high,
-				data: getData(types.high),
-				fill: false,
-				backgroundColor: 'rgb(0, 255, 128)',
-				borderColor: 'rgba(0, 255, 128, 0.2)',
-				yAxisID: 'y-axis-1',
-			},
-		],
-	};
+		setfilteredGraphData(graphData);
+	}, [setfilteredGraphData, departureDate, returnDate]);
 
 	return (
 		<section>
 			{departureDate && returnDate && (
 				<Card>
-					{hasElements ? (
-						<Graph data={graphData} options={options} />
+					{data?.hasElements ? (
+						<Graph data={filteredGraphData} options={options} />
 					) : (
 						<span>
 							There is no data between those dates, please select another date

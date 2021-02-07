@@ -38,7 +38,6 @@ const Datepicker = ({
 				handleDateChange(date, 'departureDate', setStartDate)
 			}
 			onEndDateChange={date => handleDateChange(date, 'returnDate', setEndDate)}
-			minimumDate={new Date()}
 			minimumLength={1}
 			format='dd-MM-yyyy'
 			locale={es}

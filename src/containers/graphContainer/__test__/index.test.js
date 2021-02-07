@@ -1,0 +1,60 @@
+import { render, screen } from 'utils/test-utils';
+import { waitFor } from '@testing-library/react';
+
+import GraphContainer from '../';
+import { useBenchmarks } from 'hooks/benchmarks';
+
+jest.mock('hooks/benchmarks', () => ({
+	useBenchmarks: jest.fn(),
+}));
+
+jest.mock('react-chartjs-2', () => ({
+	Line: () => <canvas>Graph</canvas>,
+}));
+
+describe('Graph Container', () => {
+	it('should render the message when hasElements is false', async () => {
+		useBenchmarks.mockImplementation(() => ({
+			data: {
+				types: {
+					low: [],
+					average: [],
+					high: [],
+				},
+				hasElements: false,
+			},
+			period: { departureDate: '2020-05-02', returnDate: '2020-05-10' },
+		}));
+
+		render(<GraphContainer />);
+
+		await waitFor(() => {
+			expect(
+				screen.getByText(/There is no data between those dates/i)
+			).toBeInTheDocument();
+		});
+	});
+
+	it('should render the graph when hasElements is true', async () => {
+		useBenchmarks.mockImplementation(() => ({
+			data: {
+				types: {
+					low: [],
+					average: [],
+					high: [],
+				},
+				hasElements: true,
+			},
+			period: { departureDate: '2020-05-02', returnDate: '2020-05-10' },
+		}));
+
+		render(<GraphContainer />);
+
+		await waitFor(() => {
+			expect(
+				screen.queryByText(/There is no data between those dates/i)
+			).not.toBeInTheDocument();
+			expect(screen.getByText(/graph/i)).toBeInTheDocument();
+		});
+	});
+});
