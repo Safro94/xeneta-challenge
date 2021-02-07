@@ -21,7 +21,10 @@ const Datepicker = ({
 	const [startDate, setStartDate] = useState();
 	const [endDate, setEndDate] = useState();
 
-	const formatDate = date => format(date, DATE_FORMAT);
+	const formatDate = date => {
+		if (!date) return null;
+		format(date, DATE_FORMAT);
+	};
 
 	const handleDateChange = (date, id, stateUpdater) => {
 		stateUpdater(date);

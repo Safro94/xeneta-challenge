@@ -24,7 +24,7 @@ describe('Autocomplete', () => {
 	});
 
 	describe('Autocomplete functionality', () => {
-		it('it should show suggestions after the user enters 3 characters', () => {
+		it('should show suggestions after the user enters 3 characters', () => {
 			render(
 				<Autocomplete
 					onSelectItem={onSelectItem}
@@ -50,7 +50,7 @@ describe('Autocomplete', () => {
 			expect(onSelectItem).toHaveBeenCalledWith({ text: 'hello world' }, id);
 		});
 
-		it('it should show the error', () => {
+		it('should show the error', () => {
 			const error = {
 				status: true,
 				message: 'error',

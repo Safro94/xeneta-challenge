@@ -1,0 +1,524 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Datepicker should match the snapshot 1`] = `
+<div
+  class="nice-dates"
+>
+  <div
+    class="inputsContainer"
+  >
+    <input
+      class="input"
+      placeholder="Start date"
+      type="text"
+      value=""
+    />
+    <input
+      class="input"
+      placeholder="End date"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    class="nice-dates-popover"
+  >
+    <div>
+      <div
+        class="nice-dates-navigation"
+      >
+        <a
+          class="nice-dates-navigation_previous"
+        />
+        <span
+          class="nice-dates-navigation_current"
+        >
+          febrero
+        </span>
+        <a
+          class="nice-dates-navigation_next"
+        />
+      </div>
+      <div
+        class="nice-dates-week-header"
+      >
+        <span
+          class="nice-dates-week-header_day"
+        >
+          lun
+        </span>
+        <span
+          class="nice-dates-week-header_day"
+        >
+          mar
+        </span>
+        <span
+          class="nice-dates-week-header_day"
+        >
+          mié
+        </span>
+        <span
+          class="nice-dates-week-header_day"
+        >
+          jue
+        </span>
+        <span
+          class="nice-dates-week-header_day"
+        >
+          vie
+        </span>
+        <span
+          class="nice-dates-week-header_day"
+        >
+          sáb
+        </span>
+        <span
+          class="nice-dates-week-header_day"
+        >
+          dom
+        </span>
+      </div>
+      <div
+        class="nice-dates-grid"
+        style="height: 6px;"
+      >
+        <div
+          class="nice-dates-grid_container -origin-top"
+          style="transform: translate3d(0, 0px, 0); transition-duration: 500ms;"
+        >
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_month"
+            >
+              feb
+            </span>
+            <span
+              class="nice-dates-day_date"
+            >
+              1
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              2
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              3
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              4
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              5
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              6
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -today"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              7
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              8
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              9
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              10
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              11
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              12
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              13
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              14
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              15
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              16
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              17
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              18
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              19
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              20
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              21
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              22
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              23
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              24
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              25
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              26
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              27
+            </span>
+          </span>
+          <span
+            class="nice-dates-day"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              28
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_month"
+            >
+              mar
+            </span>
+            <span
+              class="nice-dates-day_date"
+            >
+              1
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              2
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              3
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              4
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              5
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              6
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              7
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              8
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              9
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              10
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              11
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              12
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              13
+            </span>
+          </span>
+          <span
+            class="nice-dates-day -outside"
+            style="height: 1px;"
+          >
+            <span
+              class="nice-dates-day_date"
+            >
+              14
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
