@@ -33,7 +33,7 @@ const BenchmarksProvider = ({ children }) => {
 			case SET_GRAPH_DATA:
 				return { ...state, data: action.value };
 			case SET_DATES_PERIOD:
-				return { ...state, period: { ...action.value } };
+				return { ...state, period: { ...state.period, ...action.value } };
 			default:
 				return state;
 		}
