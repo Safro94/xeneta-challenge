@@ -175,6 +175,9 @@ const Autocomplete = ({
 
 Autocomplete.defaultProps = {
 	characters: 2,
+	error: {
+		status: false,
+	},
 };
 
 Autocomplete.prototypes = {
