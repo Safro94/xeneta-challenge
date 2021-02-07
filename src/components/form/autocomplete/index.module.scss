@@ -64,6 +64,10 @@
 	}
 }
 
+.inputDisabled {
+	pointer-events: none;
+}
+
 .menuItem {
 	height: auto;
 	padding: 8px 15px;

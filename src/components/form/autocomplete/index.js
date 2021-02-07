@@ -15,8 +15,8 @@ const Autocomplete = ({
 	inputOptions,
 	source,
 	characters,
-	id,
 	onBlurSelected,
+	id,
 	placeholder,
 }) => {
 	const [suggestions, setSuggestions] = useState(source || []);
@@ -73,7 +73,13 @@ const Autocomplete = ({
 			? `${styles.input} ${styles.borders}`
 			: styles.input;
 
-		return <input ref={ref} className={style} {...other} />;
+		return (
+			<input
+				ref={ref}
+				className={source ? style : `${style} ${styles.inputDisabled}`}
+				{...other}
+			/>
+		);
 	};
 
 	const getSuggestions = inputValue => {
@@ -107,7 +113,7 @@ const Autocomplete = ({
 
 		if (onBlurSelected && highlightedSuggestion) {
 			setSelected(highlightedSuggestion.text);
-			onSelectItem(highlightedSuggestion);
+			onSelectItem(highlightedSuggestion, id);
 		}
 	};
 
@@ -139,7 +145,6 @@ const Autocomplete = ({
 				setHighlightedSuggestion(suggestion)
 			}
 			inputProps={{
-				styles,
 				value: selected,
 				onChange: handleChange,
 				onClick: handleClick,

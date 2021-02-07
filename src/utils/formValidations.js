@@ -1,15 +1,9 @@
-const validateSearchForm = trip => {
-	const { departure, destination, departureDate, returnDate } = trip;
-
-	if (!departure || !destination || !departureDate) {
+const validateSearchForm = ({ departure, destination }) => {
+	if (!departure || !destination) {
 		return false;
 	}
 
-	if (departure.id === destination.id) {
-		return false;
-	}
-
-	if (returnDate && returnDate < departureDate) {
+	if (departure.code === destination.code) {
 		return false;
 	}
 

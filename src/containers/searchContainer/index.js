@@ -2,28 +2,22 @@ import { useState, useEffect } from 'react';
 
 import Form from 'components/form';
 
+import { useFetch } from 'hooks/fetcher';
+
 import { validateSearchForm } from 'utils/formValidations';
+
+import { PORTS_ENDPOINT } from 'constants/endpoints';
 
 import styles from './index.module.scss';
 
 const SearchContainer = () => {
-	const [trip, setTrip] = useState({
-		departure: '',
-		destination: '',
-		departureDate: '',
-		returnDate: '',
-	});
-	const [formInvalid, setFormInvalid] = useState(true);
+	const { response: ports } = useFetch({ url: PORTS_ENDPOINT });
 
-	const [ports, setPorts] = useState([
-		{ text: 'Buenos aires', id: 1 },
-		{ text: 'Panama', id: 2 },
-		{ text: 'Brasil', id: 3 },
-		{ text: 'Bucara', id: 4 },
-		{ text: 'España', id: 5 },
-		{ text: 'Francia', id: 6 },
-		{ text: 'China', id: 7 },
-	]);
+	const [formInvalid, setFormInvalid] = useState(true);
+	const [trip, setTrip] = useState({
+		departure: null,
+		destination: null,
+	});
 
 	useEffect(() => {
 		const formInvalid = !validateSearchForm(trip);
@@ -37,7 +31,9 @@ const SearchContainer = () => {
 		setTrip(newTrip);
 	};
 
-	const onSubmit = () => {};
+	const onSubmit = e => {
+		e.preventDefault();
+	};
 
 	return (
 		<section>
@@ -58,7 +54,6 @@ const SearchContainer = () => {
 					onBlurSelected
 					id='destination'
 				/>
-				<Form.Datepicker onSelectItem={handleItemSelected} />
 				<Form.Submit disabled={formInvalid}>Search</Form.Submit>
 			</Form>
 		</section>

@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { ErrorBoundary } from 'react-error-boundary';
 
 import Sidebar from 'components/sidebar';
 import Header from 'components/header';
+import Error from 'components/error';
 
 import Home from 'pages/home';
 import NotFound from 'pages/notFound';
@@ -21,10 +23,12 @@ const App = () => {
 			<div>
 				<Header isOpen={showSidebar} handleSidebar={setShowSidebar} />
 				<main className={styles.main}>
-					<Switch>
-						<Route exact path={HOME} component={Home} />
-						<Route component={NotFound} />
-					</Switch>
+					<ErrorBoundary FallbackComponent={Error}>
+						<Switch>
+							<Route exact path={HOME} component={Home} />
+							<Route component={NotFound} />
+						</Switch>
+					</ErrorBoundary>
 				</main>
 			</div>
 		</div>

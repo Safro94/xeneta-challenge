@@ -5,10 +5,8 @@ describe('Search Form Validation', () => {
 
 	beforeEach(() => {
 		trip = {
-			departure: { id: 10 },
-			destination: { id: 7 },
-			departureDate: '2021-05-03',
-			returnDate: '2021-05-08',
+			departure: { code: 10 },
+			destination: { code: 7 },
 		};
 	});
 
@@ -28,24 +26,8 @@ describe('Search Form Validation', () => {
 		expect(result).toBe(false);
 	});
 
-	it('should return false if there is no departureDate', () => {
-		trip.departureDate = null;
-
-		const result = validateSearchForm(trip);
-
-		expect(result).toBe(false);
-	});
-
-	it('should return false when departure.id equals destination.id', () => {
-		trip.destination.id = 10;
-
-		const result = validateSearchForm(trip);
-
-		expect(result).toBe(false);
-	});
-
-	it('should return false when returnDate < departureDate', () => {
-		trip.returnDate = '2021-04-03';
+	it('should return false when departure.code equals destination.code', () => {
+		trip.destination.code = 10;
 
 		const result = validateSearchForm(trip);
 
