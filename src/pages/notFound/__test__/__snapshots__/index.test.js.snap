@@ -76,6 +76,7 @@ exports[`Not Found should match the snapshot 1`] = `
   </i>
   <h2>
     Go back to the
+     
     <a
       class="link"
       href="/"

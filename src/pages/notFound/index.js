@@ -11,7 +11,7 @@ const NotFound = () => {
 		<div className={styles.container}>
 			<Icon classes={styles.icon} name='notFound' />
 			<h2>
-				Go back to the
+				Go back to the{' '}
 				<Link className={styles.link} to={HOME}>
 					home page
 				</Link>

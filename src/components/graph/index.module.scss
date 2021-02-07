@@ -4,6 +4,32 @@ canvas {
 	width: auto !important;
 	height: auto !important;
 	max-width: 100%;
+	margin: auto;
+}
+
+.actions {
+	display: none;
+}
+
+@include mq-sm {
+	.container {
+		position: relative;
+
+		.actions {
+			width: fit-content;
+			display: grid;
+			grid-template-columns: repeat(3, 30px);
+			gap: 10px;
+			padding: 5px 10px;
+			position: absolute;
+			right: 0;
+			top: -15px;
+
+			li {
+				@include display($justify: center);
+			}
+		}
+	}
 }
 
 @include mq-lg {

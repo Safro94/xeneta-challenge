@@ -1,0 +1,28 @@
+@import '../../styles/main.scss';
+
+.tabList {
+	background-color: white;
+	padding: 10px 0;
+	display: flex;
+
+	.tabLink {
+		@include transition;
+		background: transparent;
+		color: black;
+		border: none;
+		border-bottom: 3px solid transparent;
+		cursor: pointer;
+		padding: 10px 15px;
+		font-size: 14px;
+		text-transform: uppercase;
+		margin: 0 10px;
+
+		&:hover {
+			border-color: $primary-color;
+		}
+	}
+
+	.tabLinkActive {
+		border-color: $primary-color;
+	}
+}

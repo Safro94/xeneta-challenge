@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs should match the snapshot 1`] = `
+<ul
+  class="tabList"
+>
+  <li>
+    <button
+      class="tabLink tabLinkActive"
+      type="button"
+    >
+      Tab
+    </button>
+  </li>
+  <li>
+    <button
+      class="tabLink"
+      type="button"
+    >
+      Tab2
+    </button>
+  </li>
+</ul>
+`;

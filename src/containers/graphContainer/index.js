@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react';
 
 import Card from 'components/card';
 import Graph from 'components/graph';
-
-import { marketPositions } from 'constants/marketPositions';
+import Tabs from 'components/tabs';
 
 import { useBenchmarks } from 'hooks/benchmarks';
+
+import { marketPositions } from 'constants/marketPositions';
+import { BENCHMARKS_TAB, TRENDS_TAB } from 'constants/tabs';
 
 const options = {
 	scales: {
@@ -47,6 +49,7 @@ const GraphContainer = () => {
 	} = useBenchmarks();
 
 	const [filteredGraphData, setfilteredGraphData] = useState({});
+	const [selectedTab, setSelectedTab] = useState(BENCHMARKS_TAB);
 
 	useEffect(() => {
 		const graphData = {
@@ -86,14 +89,26 @@ const GraphContainer = () => {
 		<section>
 			{departureDate && returnDate && (
 				<Card>
-					{data?.hasElements ? (
-						<Graph data={filteredGraphData} options={options} />
-					) : (
-						<span>
-							There is no data between those dates, please select another date
-							range
-						</span>
-					)}
+					<Tabs
+						tabs={[BENCHMARKS_TAB, TRENDS_TAB]}
+						selected={selectedTab}
+						setSelected={setSelectedTab}
+					>
+						<Tabs.Tab isSelected={selectedTab === BENCHMARKS_TAB}>
+							{data?.hasElements ? (
+								<Graph data={filteredGraphData} options={options} />
+							) : (
+								<span>
+									There is no data between those dates, please select another
+									date range
+								</span>
+							)}
+						</Tabs.Tab>
+
+						<Tabs.Tab isSelected={selectedTab === TRENDS_TAB}>
+							<h1>Trends</h1>
+						</Tabs.Tab>
+					</Tabs>
 				</Card>
 			)}
 		</section>
