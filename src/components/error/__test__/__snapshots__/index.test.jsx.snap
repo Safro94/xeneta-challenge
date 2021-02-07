@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error should match the snapshot 1`] = `
+<div
+  class="container"
+  role="alert"
+>
+  <img
+    alt="Error"
+    class="image"
+    src="error.png"
+  />
+  <h2>
+    Ooops, there's been an error, please try again in a few minutes
+  </h2>
+</div>
+`;

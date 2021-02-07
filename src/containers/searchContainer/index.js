@@ -17,6 +17,8 @@ const SearchContainer = () => {
 	const [trip, setTrip] = useState({
 		departure: null,
 		destination: null,
+		departureDate: '',
+		returnDate: '',
 	});
 
 	useEffect(() => {
@@ -54,6 +56,7 @@ const SearchContainer = () => {
 					onBlurSelected
 					id='destination'
 				/>
+				<Form.Datepicker onSelectItem={handleItemSelected} />
 				<Form.Submit disabled={formInvalid}>Search</Form.Submit>
 			</Form>
 		</section>

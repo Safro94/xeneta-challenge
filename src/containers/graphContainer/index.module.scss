@@ -1,0 +1,9 @@
+@import '../../styles/main.scss';
+
+@include mq-lg {
+	.container {
+		display: grid;
+		grid-template-columns: 4fr 1fr;
+		gap: 15px;
+	}
+}
