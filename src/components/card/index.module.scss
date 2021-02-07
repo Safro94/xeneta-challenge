@@ -1,0 +1,9 @@
+@import '../../styles/main.scss';
+
+.container {
+	@include flex-center;
+	@include box-shadow;
+	background: $secondary-color;
+	padding: 20px;
+	border-radius: 4px;
+}

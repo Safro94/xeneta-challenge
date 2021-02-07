@@ -1,10 +1,12 @@
+import Card from 'components/card';
+
 import styles from './index.module.scss';
 
 const GraphContainer = () => {
 	return (
 		<section className={styles.container}>
-			<div>Grafico</div>
-			<div>filtros</div>
+			<Card></Card>
+			<Card></Card>
 		</section>
 	);
 };
