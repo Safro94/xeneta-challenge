@@ -1,5 +1,6 @@
 import { render, screen } from 'utils/test-utils';
 import userEvent from '@testing-library/user-event';
+
 import Header from '../';
 
 describe('Header', () => {
