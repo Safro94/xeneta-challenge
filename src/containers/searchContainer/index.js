@@ -15,7 +15,7 @@ import styles from './index.module.scss';
 
 const SearchContainer = () => {
 	const { response: ports } = useFetch({ url: PORTS_ENDPOINT });
-	const { setGraphData } = useBenchmarks();
+	const { setGraphData, setPeriod } = useBenchmarks();
 
 	const [formInvalid, setFormInvalid] = useState(true);
 	const handleError = useErrorHandler();
@@ -44,7 +44,13 @@ const SearchContainer = () => {
 		fetcher({
 			url: `${RATES_ENDPOINT}/${trip.departure?.code}/${trip.destination?.code}`,
 		}).then(
-			res => setGraphData(res),
+			res => {
+				setGraphData(res);
+				setPeriod({
+					departureDate: trip.departureDate,
+					returnDate: trip.returnDate,
+				});
+			},
 			error => handleError(error)
 		);
 	};

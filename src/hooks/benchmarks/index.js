@@ -5,7 +5,10 @@ const SET_DATES_PERIOD = 'SET_DATES_PERIOD';
 
 const initialState = {
 	data: [],
-	dates: {},
+	period: {
+		departureDate: null,
+		returnDate: null,
+	},
 };
 
 const BenchmarksContext = createContext(initialState);
@@ -17,11 +20,11 @@ const useBenchmarks = () => {
 		setBenchmarks({ type: SET_GRAPH_DATA, value: data });
 	};
 
-	const setDates = dates => {
+	const setPeriod = dates => {
 		setBenchmarks({ type: SET_DATES_PERIOD, value: dates });
 	};
 
-	return { ...benchmarks, setGraphData, setDates };
+	return { ...benchmarks, setGraphData, setPeriod };
 };
 
 const BenchmarksProvider = ({ children }) => {
@@ -30,7 +33,7 @@ const BenchmarksProvider = ({ children }) => {
 			case SET_GRAPH_DATA:
 				return { ...state, data: action.value };
 			case SET_DATES_PERIOD:
-				return { ...state, dates: action.value };
+				return { ...state, period: { ...action.value } };
 			default:
 				return state;
 		}
