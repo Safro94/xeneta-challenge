@@ -68,6 +68,15 @@
 	pointer-events: none;
 }
 
+.inputError {
+	border-color: red;
+}
+
+.errorMessage {
+	color: red;
+	font-size: 10px;
+}
+
 .menuItem {
 	height: auto;
 	padding: 8px 15px;

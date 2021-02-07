@@ -19,4 +19,15 @@ const validateSearchForm = ({
 	return true;
 };
 
-export { validateSearchForm };
+const errorCompare = (trip, message) => {
+	const { departure, destination } = trip;
+
+	const status = !departure && !destination ? true : false;
+
+	return {
+		message,
+		status: !status && departure?.code === destination?.code,
+	};
+};
+
+export { validateSearchForm, errorCompare };

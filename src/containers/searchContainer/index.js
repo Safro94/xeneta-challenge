@@ -6,10 +6,11 @@ import Form from 'components/form';
 import { useFetch } from 'hooks/fetcher';
 import { useBenchmarks } from 'hooks/benchmarks';
 
-import { validateSearchForm } from 'utils/formValidations';
+import { validateSearchForm, errorCompare } from 'utils/formValidations';
 import fetcher from 'utils/fetcher';
 
 import { PORTS_ENDPOINT, RATES_ENDPOINT } from 'constants/endpoints';
+import { SEARCH_EQUAL_VALUES } from 'constants/messages';
 
 import styles from './index.module.scss';
 
@@ -21,8 +22,8 @@ const SearchContainer = () => {
 	const handleError = useErrorHandler();
 
 	const [trip, setTrip] = useState({
-		departure: null,
-		destination: null,
+		// departure: null,
+		// destination: null,
 		departureDate: '',
 		returnDate: '',
 	});
@@ -65,6 +66,7 @@ const SearchContainer = () => {
 					onSelectItem={handleItemSelected}
 					onBlurSelected
 					id='departure'
+					error={errorCompare(trip, SEARCH_EQUAL_VALUES)}
 				/>
 				<Form.Autocomplete
 					placeholder='Destination'
@@ -73,6 +75,7 @@ const SearchContainer = () => {
 					onSelectItem={handleItemSelected}
 					onBlurSelected
 					id='destination'
+					error={errorCompare(trip, SEARCH_EQUAL_VALUES)}
 				/>
 				<Form.Datepicker onSelectItem={handleItemSelected} />
 				<Form.Submit disabled={formInvalid}>Search</Form.Submit>

@@ -7,10 +7,6 @@ const Form = ({ children, ...rest }) => {
 	return <form {...rest}>{children}</form>;
 };
 
-Form.Error = ({ children, ...rest }) => {
-	return <div></div>;
-};
-
 Form.Autocomplete = ({ ...rest }) => {
 	return (
 		<div className={styles.formGroup}>

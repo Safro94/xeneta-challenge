@@ -18,6 +18,7 @@ const Autocomplete = ({
 	onBlurSelected,
 	id,
 	placeholder,
+	error,
 }) => {
 	const [suggestions, setSuggestions] = useState(source || []);
 	const [highlightedSuggestion, setHighlightedSuggestion] = useState({
@@ -73,12 +74,25 @@ const Autocomplete = ({
 			? `${styles.input} ${styles.borders}`
 			: styles.input;
 
+		const inputStatusStyle = !source
+			? `${style} ${styles.inputDisabled}`
+			: style;
+
 		return (
-			<input
-				ref={ref}
-				className={source ? style : `${style} ${styles.inputDisabled}`}
-				{...other}
-			/>
+			<div>
+				<input
+					ref={ref}
+					className={
+						error.status
+							? `${inputStatusStyle} ${styles.inputError}`
+							: inputStatusStyle
+					}
+					{...other}
+				/>
+				{error.status && (
+					<span className={styles.errorMessage}>{error.message}</span>
+				)}
+			</div>
 		);
 	};
 
