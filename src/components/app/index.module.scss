@@ -6,8 +6,13 @@
 		display: grid;
 		grid-template-columns: 200px 1fr;
 
-		.main {
-			padding: 20px;
+		.content {
+			max-height: 100vh;
+			overflow-y: auto;
+
+			.main {
+				padding: 20px;
+			}
 		}
 	}
 }

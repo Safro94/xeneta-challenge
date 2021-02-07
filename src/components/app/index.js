@@ -22,7 +22,7 @@ const App = () => {
 		<div className={styles.app}>
 			<Sidebar isOpen={showSidebar} />
 
-			<div>
+			<div className={styles.content}>
 				<Header isOpen={showSidebar} handleSidebar={setShowSidebar} />
 				<main className={styles.main}>
 					<ErrorBoundary FallbackComponent={Error}>
