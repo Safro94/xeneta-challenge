@@ -39,6 +39,7 @@ const Autocomplete = ({
 
 		return (
 			<div
+				data-testid='menu-item'
 				className={
 					isHighlighted
 						? `${styles.menuItem} ${styles.selected}`
