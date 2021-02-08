@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# Xeneta coding Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This project was built for a coding challenge. The client is a CRA React application. The proxy was built using Node js and Express. This project uses Sass modules for the styling.
 
-In the project directory, you can run:
+**Note** Please see this [file](https://github.com/Safro94/xeneta-challenge/blob/master/Notes.md) before using the app.
 
-### `npm start`
+## Folder structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    root
+      ├── client
+      │   ├── proxy
+      │   │   └── src
+      │   │       └── index.js
+      │   ├── public
+      │   └── src
+      │       ├── mocks
+      │       ├── assets
+      │       ├── components
+      │       ├── constants
+      │       ├── containers
+      │       ├── hooks
+      │       ├── pages
+      │       ├── styles
+      │       ├── utils
+      │       └── index.js
+      │
+      └── README.md
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Stack
 
-### `npm test`
+### Proxy
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    - Node JS
+    - Express
 
-### `npm run build`
+### Frontend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - React
+    - Sass Modules
+    - Jest + React testing library
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How to start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Clone
 
-### `npm run eject`
+You can clone the repo using this url: https://github.com/Safro94/xeneta-challenge
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+git clone https://github.com/Safro94/xeneta-challenge.git
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Install dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Make sure you are using the correct Node version(v12). If using NVM, just type
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+nvm use
+```
 
-## Learn More
+Go to the client folder
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+cd xeneta-challenge
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Run
 
-### Code Splitting
+```
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Go to the proxy folder
 
-### Analyzing the Bundle Size
+```
+cd xeneta-challenge/proxy
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Run
 
-### Making a Progressive Web App
+```
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Add .env file with this keys
 
-### Advanced Configuration
+```
+API_URL=https://685rp9jkj1.execute-api.eu-west-1.amazonaws.com/prod
+API_KEY=the_api_key_you_sent_by_email
+PORT=9000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To run both projects at the same time, go to the proxy folder and run
 
-### Deployment
+```
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+the proxy should be running on http://localhost:9000 and the client http://localhost:3000
 
-### `npm run build` fails to minify
+## Test
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The frontend uses Jest + React testing library. You can run this command on each project
+
+```
+npm test
+```
+
+to run the tests.
