@@ -1,4 +1,4 @@
-# Xeneta coding Challenge
+# Xeneta Coding Challenge
 
 ## Description
 
@@ -108,3 +108,7 @@ npm test
 ```
 
 to run the tests.
+
+## Task 2
+
+See this [file](https://github.com/Safro94/xeneta-challenge/blob/master/Task2.md) for the explanation.
