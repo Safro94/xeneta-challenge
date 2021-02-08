@@ -13,74 +13,80 @@ import './overrides.css';
 const DATE_FORMAT = 'yyyy-MM-dd';
 
 const Datepicker = ({
-	onSelectItem,
-	placeholderStart,
-	placeholderEnd,
-	...rest
+  onSelectItem,
+  placeholderStart,
+  placeholderEnd,
+  ...rest
 }) => {
-	const [startDate, setStartDate] = useState();
-	const [endDate, setEndDate] = useState();
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState();
 
-	const formatDate = date => {
-		if (!date) return null;
-		return format(date, DATE_FORMAT);
-	};
+  const formatDate = (date) => {
+    if (!date) return null;
+    return format(date, DATE_FORMAT);
+  };
 
-	const handleDateChange = (date, id, stateUpdater) => {
-		stateUpdater(date);
+  const handleDateChange = (date, id, stateUpdater) => {
+    stateUpdater(date);
 
-		const formattedDate = formatDate(date);
-		onSelectItem(formattedDate, id);
-	};
+    const formattedDate = formatDate(date);
+    onSelectItem(formattedDate, id);
+  };
 
-	return (
-		<DateRangePicker
-			startDate={startDate}
-			endDate={endDate}
-			onStartDateChange={date =>
-				handleDateChange(date, 'departureDate', setStartDate)
-			}
-			onEndDateChange={date => handleDateChange(date, 'returnDate', setEndDate)}
-			minimumLength={1}
-			format='dd-MM-yyyy'
-			locale={es}
-			{...rest}
-		>
-			{({ startDateInputProps, endDateInputProps, focus }) => (
-				<div className={styles.inputsContainer}>
-					<input
-						className={
-							focus === START_DATE
-								? `${styles.input} ${styles.focus}`
-								: styles.input
-						}
-						{...startDateInputProps}
-						placeholder={placeholderStart}
-					/>
-					<input
-						className={
-							focus === END_DATE
-								? `${styles.input} ${styles.focus}`
-								: styles.input
-						}
-						{...endDateInputProps}
-						placeholder={placeholderEnd}
-					/>
-				</div>
-			)}
-		</DateRangePicker>
-	);
+  return (
+    <DateRangePicker
+      startDate={startDate}
+      endDate={endDate}
+      onStartDateChange={(date) =>
+        handleDateChange(date, 'departureDate', setStartDate)
+      }
+      onEndDateChange={(date) =>
+        handleDateChange(date, 'returnDate', setEndDate)
+      }
+      minimumLength={1}
+      format='dd-MM-yyyy'
+      locale={es}
+      {...rest}
+    >
+      {({ startDateInputProps, endDateInputProps, focus }) => (
+        <div className={styles.inputsContainer}>
+          <input
+            type='text'
+            className={
+              focus === START_DATE
+                ? `${styles.input} ${styles.focus}`
+                : styles.input
+            }
+            {...startDateInputProps}
+            placeholder={placeholderStart}
+            readOnly
+          />
+          <input
+            type='text'
+            className={
+              focus === END_DATE
+                ? `${styles.input} ${styles.focus}`
+                : styles.input
+            }
+            {...endDateInputProps}
+            placeholder={placeholderEnd}
+            readOnly
+          />
+        </div>
+      )}
+    </DateRangePicker>
+  );
 };
 
 Datepicker.defaultProps = {
-	placeholderStart: 'Start date',
-	placeholderEnd: 'End date',
+  placeholderStart: 'Start date',
+  placeholderEnd: 'End date',
 };
 
 Datepicker.prototypes = {
-	onSelectItem: PropTypes.func,
-	placeholderStart: PropTypes.string,
-	placeholderEnd: PropTypes.string,
+  onSelectItem: PropTypes.func,
+  placeholderStart: PropTypes.string,
+  placeholderEnd: PropTypes.string,
 };
 
 export default Datepicker;
