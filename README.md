@@ -37,7 +37,8 @@ This project was built for a coding challenge. The client is a CRA React applica
 
 ### Frontend
 
-    - React
+    - React + hooks
+    - Context API
     - Sass Modules
     - Jest + React testing library
 
