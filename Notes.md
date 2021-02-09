@@ -1,6 +1,7 @@
 # Considerations
 
-- I made a proxy to bypass a CORS issue and to provide more security for the API_KEY. This proxy is super basic, it doesn't have any folder structure at all because I thought I was goingo way over the scope.
+- I assume you have a page for user auth, I just harcoded a user because I thought I would be going out of scope.
+- I made a proxy to bypass a CORS issue and to provide more security for the API_KEY. This proxy is super basic, it doesn't have any folder structure at all because I thought I was going way out of scope.
 - Task 2 functionality is already implemented.
 - I used your image as an idea but I proposed a new design.
 - The filter functionality is already provided by the library. For example, if you want to see only the data for average, you'd have to click on the high and low labels to hide them and the chart refreshes.
