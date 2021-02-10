@@ -1,12 +1,8 @@
-import { format } from 'date-fns';
-
 import { render, screen, waitFor } from 'utils/test-utils';
 import Home from '../';
 
 import { useFetch } from 'hooks/fetcher';
 import { useBenchmarks } from 'hooks/benchmarks';
-
-import fetcher from 'utils/fetcher';
 
 jest.mock('hooks/benchmarks', () => {
 	return {
@@ -18,19 +14,7 @@ jest.mock('hooks/fetcher', () => ({
 	useFetch: jest.fn(),
 }));
 
-jest.mock('date-fns', () => {
-	return {
-		format: jest.fn(),
-	};
-});
-
-jest.mock('utils/fetcher');
-
 describe('Home', () => {
-	const fetcherResponse = [
-		{ day: '2020-05-01', low: 100, mean: 200, high: 300 },
-	];
-
 	beforeEach(() => {
 		useFetch.mockImplementation(() => ({
 			response: [
@@ -39,12 +23,6 @@ describe('Home', () => {
 				{ code: 'AM', text: 'Amsterdam' },
 			],
 		}));
-
-		format
-			.mockImplementationOnce(() => '2020-10-01')
-			.mockImplementationOnce(() => '2020-11-01');
-
-		fetcher.mockImplementation(() => Promise.resolve(fetcherResponse));
 	});
 
 	it('should show the graph when renderGraph is true', async () => {
